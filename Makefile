@@ -1,12 +1,11 @@
-#https://gist.github.com/serialhex/ada2b37581591716d41f70edd2986938
-#define macros
+# https://gist.github.com/serialhex/ada2b37581591716d41f70edd2986938
+# define macros
 EXE = compress.exe
 SRC_DIR = src
 BIN_DIR = bin
 OBJ_DIR = obj
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
-# add other things here...
 
 CFLAGS = -c -Wall
 
