@@ -71,7 +71,7 @@ bool decompressLZ78 (const char *fileName, FileInfo *myFile) {
     std::ofstream FileOut(changeFileExtension(fileName, extension).c_str(), std::ifstream::out | std::ifstream::binary);
     if (!FileOut.good()) return false;
 
-    unsigned char byte, id;
+    unsigned char byte;
     std::vector<std::string> dict;
     std::string chain = "";
 

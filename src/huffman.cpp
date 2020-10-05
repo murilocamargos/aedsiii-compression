@@ -85,7 +85,6 @@ void generateCodes (HuffmanNode *node, unsigned long long code, CT *codeTable) {
 }
 
 void invertCodes (CT *codeTable){
-    int i;
     unsigned long long n, cpy;
 
     /* Mathematically reverse a number */
@@ -105,7 +104,7 @@ HuffmanNode *generateTree (BMP bitMap) {
     std::vector<HuffmanNode* > HuffmanTree;
 
     /* Every char on the file is a node initially */
-    for (int i = 0; i < bitMap.size(); i++)
+    for (unsigned int i = 0; i < bitMap.size(); i++)
         HuffmanTree.push_back(createNode(bitMap[i]));
 
     /* Build the huffman tree and returns it's root */
@@ -114,7 +113,7 @@ HuffmanNode *generateTree (BMP bitMap) {
 
 bool compressHuffman (const char *fileName, BMP bitMap, FileInfo *myFile) {
     CT codeTable;
-    int length, bitsLeft = 8, i, bmpSize = bitMap.size();
+    int length, bitsLeft = 8, bmpSize = bitMap.size();
     unsigned long long n;
     unsigned char bit, byte, x = 0;
 
